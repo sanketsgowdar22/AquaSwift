@@ -1,0 +1,130 @@
+@import "tailwindcss";
+
+/* ============================================
+   AquaSwift Design System
+   ============================================ */
+
+@theme inline {
+  /* Primary — Deep Blue (Trust, Water) */
+  --color-primary-50: #EBF2FF;
+  --color-primary-100: #D6E5FF;
+  --color-primary-200: #ADC8FF;
+  --color-primary-300: #7AA4F5;
+  --color-primary-400: #4A8FE7;
+  --color-primary-500: #1E56A0;
+  --color-primary-600: #163172;
+  --color-primary-700: #112554;
+  --color-primary-800: #0D1B3E;
+  --color-primary-900: #091228;
+
+  /* Accent — Teal (CTA, Success) */
+  --color-accent-400: #2DD4BF;
+  --color-accent-500: #00BFA6;
+  --color-accent-600: #009688;
+
+  /* Surface & Background */
+  --color-surface: #FFFFFF;
+  --color-background: #F5F8FC;
+  --color-sidebar: #0F172A;
+  --color-sidebar-hover: #1E293B;
+  --color-sidebar-active: #1E56A0;
+
+  /* Text */
+  --color-text-primary: #1A1A2E;
+  --color-text-secondary: #6B7280;
+  --color-text-muted: #9CA3AF;
+  --color-text-inverse: #FFFFFF;
+
+  /* Status */
+  --color-success: #10B981;
+  --color-warning: #F59E0B;
+  --color-error: #EF4444;
+  --color-info: #3B82F6;
+
+  /* Borders */
+  --color-border: #E5E7EB;
+  --color-border-light: #F3F4F6;
+
+  /* Radius */
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 14px;
+  --radius-xl: 20px;
+  --radius-full: 9999px;
+
+  /* Font */
+  --font-sans: 'Inter', ui-sans-serif, system-ui, sans-serif;
+}
+
+/* ============================================
+   Base Styles
+   ============================================ */
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-background);
+  color: var(--color-text-primary);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ============================================
+   Scrollbar Styling
+   ============================================ */
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #CBD5E1;
+  border-radius: var(--radius-full);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #94A3B8;
+}
+
+/* ============================================
+   Animations
+   ============================================ */
+
+@keyframes fade-in {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slide-in-left {
+  from { opacity: 0; transform: translateX(-16px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+.animate-fade-in {
+  animation: fade-in 0.3s ease-out both;
+}
+
+.animate-slide-in {
+  animation: slide-in-left 0.3s ease-out both;
+}
+
+.animate-shimmer {
+  background: linear-gradient(90deg, #F3F4F6 25%, #E5E7EB 50%, #F3F4F6 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+}
