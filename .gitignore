@@ -14,8 +14,10 @@ dist/
 downloads/
 eggs/
 .eggs/
-lib/
+# Python packaging (scoped to avoid matching frontend/lib/)
+/lib/
 lib64/
+!frontend/lib/
 parts/
 sdist/
 var/
