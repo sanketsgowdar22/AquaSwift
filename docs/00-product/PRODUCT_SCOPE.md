@@ -1,4 +1,4 @@
-# AquaSwift — Product Scope
+# WoW — Product Scope
 
 **Version:** 1.0
 **Last Updated:** 2026-08-31

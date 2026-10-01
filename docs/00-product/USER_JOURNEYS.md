@@ -1,4 +1,4 @@
-# AquaSwift — User Journeys
+# WoW — User Journeys
 
 **Version:** 1.0
 **Last Updated:** 2026-08-31
@@ -20,7 +20,7 @@ Each journey documents:
 ## J1 — First-Time Customer Registration & First Order
 
 **Actor:** P1 (Priya — Individual Customer)
-**Trigger:** Priya downloads the AquaSwift app after seeing an ad
+**Trigger:** Priya downloads the WoW app after seeing an ad
 **V1 Scope:** ✅ Fully supported
 
 ### Steps

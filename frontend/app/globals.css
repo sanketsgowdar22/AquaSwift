@@ -1,33 +1,33 @@
 @import "tailwindcss";
 
 /* ============================================
-   AquaSwift Design System
+   WoW (Water on Way) Design System
    ============================================ */
 
 @theme inline {
-  /* Primary — Deep Blue (Trust, Water) */
-  --color-primary-50: #EBF2FF;
-  --color-primary-100: #D6E5FF;
-  --color-primary-200: #ADC8FF;
-  --color-primary-300: #7AA4F5;
-  --color-primary-400: #4A8FE7;
-  --color-primary-500: #1E56A0;
-  --color-primary-600: #163172;
-  --color-primary-700: #112554;
-  --color-primary-800: #0D1B3E;
-  --color-primary-900: #091228;
+  /* Primary — Vivid Blue (Trust, Water, Brand) */
+  --color-primary-50: #E8F0FE;
+  --color-primary-100: #C5DAFC;
+  --color-primary-200: #91B5F9;
+  --color-primary-300: #5D8FF5;
+  --color-primary-400: #3A73E8;
+  --color-primary-500: #1B3A8C;
+  --color-primary-600: #0160CD;
+  --color-primary-700: #015BCB;
+  --color-primary-800: #0D1B5E;
+  --color-primary-900: #081040;
 
-  /* Accent — Teal (CTA, Success) */
-  --color-accent-400: #2DD4BF;
-  --color-accent-500: #00BFA6;
-  --color-accent-600: #009688;
+  /* Accent — Green (CTA, Success) */
+  --color-accent-400: #2DD4A8;
+  --color-accent-500: #1BA169;
+  --color-accent-600: #158F5B;
 
   /* Surface & Background */
   --color-surface: #FFFFFF;
   --color-background: #F5F8FC;
   --color-sidebar: #0F172A;
   --color-sidebar-hover: #1E293B;
-  --color-sidebar-active: #1E56A0;
+  --color-sidebar-active: #0160CD;
 
   /* Text */
   --color-text-primary: #1A1A2E;
@@ -36,10 +36,10 @@
   --color-text-inverse: #FFFFFF;
 
   /* Status */
-  --color-success: #10B981;
+  --color-success: #1BA169;
   --color-warning: #F59E0B;
   --color-error: #EF4444;
-  --color-info: #3B82F6;
+  --color-info: #0160CD;
 
   /* Borders */
   --color-border: #E5E7EB;
@@ -115,6 +115,24 @@ body {
   100% { background-position: 200% 0; }
 }
 
+@keyframes bounce-in {
+  0% { transform: scale(0.3); opacity: 0; }
+  50% { transform: scale(1.05); }
+  70% { transform: scale(0.9); }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+@keyframes check-pop {
+  0% { transform: scale(0); }
+  50% { transform: scale(1.2); }
+  100% { transform: scale(1); }
+}
+
+@keyframes slide-up {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
 .animate-fade-in {
   animation: fade-in 0.3s ease-out both;
 }
@@ -123,8 +141,27 @@ body {
   animation: slide-in-left 0.3s ease-out both;
 }
 
+.animate-bounce-in {
+  animation: bounce-in 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55) both;
+}
+
+.animate-check-pop {
+  animation: check-pop 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55) 0.2s both;
+}
+
+.animate-slide-up {
+  animation: slide-up 0.4s ease-out both;
+}
+
 .animate-shimmer {
   background: linear-gradient(90deg, #F3F4F6 25%, #E5E7EB 50%, #F3F4F6 75%);
   background-size: 200% 100%;
   animation: shimmer 1.5s infinite;
 }
+
+/* Staggered animation delays */
+.delay-100 { animation-delay: 0.1s; }
+.delay-200 { animation-delay: 0.2s; }
+.delay-300 { animation-delay: 0.3s; }
+.delay-400 { animation-delay: 0.4s; }
+.delay-500 { animation-delay: 0.5s; }

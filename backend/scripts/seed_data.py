@@ -1,5 +1,5 @@
 """
-AquaSwift — Seed Data Script
+WoW — Seed Data Script
 
 Seeds initial data required for the application to function:
 - Platform roles and permissions
@@ -156,18 +156,18 @@ async def seed_admin_user() -> None:
 
     async with async_session_factory() as db:
         # Check if admin already exists
-        result = await db.execute(select(User).where(User.email == "admin@aquaswift.in"))
+        result = await db.execute(select(User).where(User.email == "admin@WoW.in"))
         existing = result.scalar_one_or_none()
 
         if existing:
-            logger.info("admin_user_exists", email="admin@aquaswift.in")
+            logger.info("admin_user_exists", email="admin@WoW.in")
             return
 
         # Create admin user
         admin = User(
-            email="admin@aquaswift.in",
+            email="admin@WoW.in",
             password_hash=hash_password("admin123"),
-            full_name="AquaSwift Admin",
+            full_name="WoW Admin",
         )
         db.add(admin)
         await db.flush()
@@ -179,7 +179,7 @@ async def seed_admin_user() -> None:
             db.add(UserRole(user_id=admin.id, role_id=admin_role.id))
 
         await db.commit()
-        logger.info("admin_user_created", email="admin@aquaswift.in", password="admin123")
+        logger.info("admin_user_created", email="admin@WoW.in", password="admin123")
 
 
 async def main() -> None:

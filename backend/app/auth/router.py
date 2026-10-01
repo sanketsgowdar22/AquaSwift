@@ -1,5 +1,5 @@
 """
-AquaSwift — Auth Router
+WoW — Auth Router
 """
 
 from __future__ import annotations

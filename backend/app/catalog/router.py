@@ -1,4 +1,4 @@
-"""AquaSwift — Catalog Router"""
+"""WoW — Catalog Router"""
 
 from __future__ import annotations
 

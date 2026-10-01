@@ -1,5 +1,5 @@
 """
-AquaSwift — Auth Models
+WoW — Auth Models
 
 User and RefreshToken tables per DATABASE_ARCHITECTURE.md §2.1.
 """

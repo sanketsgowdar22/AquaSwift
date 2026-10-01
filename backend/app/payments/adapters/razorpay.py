@@ -1,5 +1,5 @@
 """
-AquaSwift — Razorpay Payment Gateway Adapter (Stub)
+WoW — Razorpay Payment Gateway Adapter (Stub)
 
 Stub adapter for development. Logs calls and returns mock responses.
 Swap for real Razorpay SDK integration when API keys are configured.

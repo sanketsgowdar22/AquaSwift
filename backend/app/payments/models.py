@@ -1,4 +1,4 @@
-"""AquaSwift — Payments & Refunds Models per DATABASE_ARCHITECTURE.md §2.8"""
+"""WoW — Payments & Refunds Models per DATABASE_ARCHITECTURE.md §2.8"""
 from __future__ import annotations
 import uuid
 from sqlalchemy import Column, DateTime, ForeignKey, Numeric, String, Text, func

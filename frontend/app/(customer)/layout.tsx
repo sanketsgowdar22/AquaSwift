@@ -1,21 +1,21 @@
 "use client";
 
 import { useEffect } from "react";
-import { useRouter } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import { useAuth } from "@/lib/auth";
-import { Droplets, Home, ShoppingCart, ClipboardList, User } from "lucide-react";
+import { Home, ShoppingBag, User, Droplets } from "lucide-react";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
+import WowLogo from "@/components/wow-logo";
 
-const BOTTOM_NAV = [
-  { label: "Home", icon: Home, href: "/app" },
-  { label: "Orders", icon: ClipboardList, href: "/app/orders" },
-  { label: "Profile", icon: User, href: "/app/profile" },
+const NAV = [
+  { href: "/app", icon: Home, label: "Home" },
+  { href: "/app/orders", icon: ShoppingBag, label: "Orders" },
+  { href: "/app/profile", icon: User, label: "Profile" },
 ];
 
 export default function CustomerLayout({ children }: { children: React.ReactNode }) {
-  const { isAuthenticated, isLoading } = useAuth();
+  const { isLoading, isAuthenticated } = useAuth();
   const router = useRouter();
   const pathname = usePathname();
 
@@ -26,7 +26,7 @@ export default function CustomerLayout({ children }: { children: React.ReactNode
   if (isLoading) {
     return (
       <div className="min-h-screen flex items-center justify-center bg-background">
-        <Droplets className="w-10 h-10 text-primary-500 animate-pulse" />
+        <Droplets className="w-10 h-10 text-primary-600 animate-pulse" />
       </div>
     );
   }
@@ -36,40 +36,35 @@ export default function CustomerLayout({ children }: { children: React.ReactNode
   return (
     <div className="min-h-screen bg-background flex flex-col max-w-lg mx-auto relative">
       {/* Header */}
-      <header className="sticky top-0 z-30 bg-white/90 backdrop-blur-lg border-b border-border/50 px-4 py-3 flex items-center gap-3">
-        <div className="w-9 h-9 rounded-xl bg-primary-500 flex items-center justify-center">
-          <Droplets className="w-5 h-5 text-white" />
-        </div>
-        <div>
-          <h1 className="text-lg font-bold text-primary-700 leading-none">AquaSwift</h1>
-          <p className="text-xs text-text-muted">Pure water, swift delivery</p>
+      <header className="sticky top-0 z-30 bg-white border-b border-border px-4 py-3 flex items-center justify-between">
+        <WowLogo variant="icon" size="sm" />
+        <div className="flex items-center gap-1 text-sm text-text-secondary">
+          <span className="text-xs text-text-muted">Deliver to</span>
+          <span className="font-medium text-text-primary ml-1">Banavasi, Karnataka ▾</span>
         </div>
       </header>
 
       {/* Content */}
-      <main className="flex-1 pb-20">{children}</main>
+      <main className="flex-1 pb-20 overflow-y-auto">{children}</main>
 
-      {/* Bottom Navigation */}
-      <nav className="fixed bottom-0 left-1/2 -translate-x-1/2 w-full max-w-lg bg-white border-t border-border/50 z-40">
-        <div className="flex items-center justify-around py-2">
-          {BOTTOM_NAV.map((item) => {
-            const isActive = pathname === item.href || (item.href !== "/app" && pathname?.startsWith(item.href));
-            return (
-              <Link
-                key={item.href}
-                href={item.href}
-                className={cn(
-                  "flex flex-col items-center gap-0.5 px-4 py-1.5 rounded-xl transition-all",
-                  isActive ? "text-primary-500" : "text-text-muted hover:text-text-secondary"
-                )}
-              >
-                <item.icon className={cn("w-5 h-5", isActive && "scale-110")} />
-                <span className={cn("text-[10px] font-medium", isActive && "font-semibold")}>{item.label}</span>
-                {isActive && <div className="w-1 h-1 rounded-full bg-primary-500 mt-0.5" />}
-              </Link>
-            );
-          })}
-        </div>
+      {/* Bottom Nav */}
+      <nav className="fixed bottom-0 left-1/2 -translate-x-1/2 w-full max-w-lg bg-white border-t border-border flex z-30">
+        {NAV.map((item) => {
+          const active = pathname === item.href || (item.href !== "/app" && pathname.startsWith(item.href));
+          return (
+            <Link
+              key={item.href}
+              href={item.href}
+              className={cn(
+                "flex-1 flex flex-col items-center gap-1 py-2.5 text-[11px] font-medium transition-colors",
+                active ? "text-primary-600" : "text-text-muted hover:text-text-secondary"
+              )}
+            >
+              <item.icon className={cn("w-5 h-5", active && "fill-primary-600/10")} />
+              {item.label}
+            </Link>
+          );
+        })}
       </nav>
     </div>
   );
