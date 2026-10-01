@@ -1,11 +1,11 @@
-# AquaSwift — Glossary
+# WoW — Glossary
 
 **Version:** 1.0
 **Last Updated:** 2026-08-31
 
 ---
 
-This glossary defines domain-specific terminology used throughout AquaSwift's product and engineering documentation. Terms are grouped by domain and sorted alphabetically within each group.
+This glossary defines domain-specific terminology used throughout WoW's product and engineering documentation. Terms are grouped by domain and sorted alphabetically within each group.
 
 ---
 
@@ -120,10 +120,10 @@ This glossary defines domain-specific terminology used throughout AquaSwift's pr
 
 | Term | Definition |
 |------|-----------|
-| **Adapter Pattern** | A design pattern used throughout AquaSwift for external integrations. A generic interface defines the contract; a concrete implementation handles a specific provider. Allows swapping providers without changing business logic. Used for: payments (Razorpay), SMS (MSG91), push, email, storage. |
+| **Adapter Pattern** | A design pattern used throughout WoW for external integrations. A generic interface defines the contract; a concrete implementation handles a specific provider. Allows swapping providers without changing business logic. Used for: payments (Razorpay), SMS (MSG91), push, email, storage. |
 | **Audit Log** | An immutable record of an action performed in the system: actor, action, entity type/ID, before/after state (JSONB), metadata, and timestamp. Stored in `audit_logs`. Required for all admin mutations to catalog, pricing, and inventory. |
 | **Celery** | The distributed task queue used for background jobs (e.g., reservation expiry, notification sending, report generation). Workers process tasks; Beat schedules periodic tasks. |
-| **Modular Monolith** | The architectural pattern for AquaSwift's backend. All modules run in a single deployable unit but are structured as clearly separated packages that could be extracted into independent services later. Module boundaries follow the `backend/app/<module>/` directory structure. |
+| **Modular Monolith** | The architectural pattern for WoW's backend. All modules run in a single deployable unit but are structured as clearly separated packages that could be extracted into independent services later. Module boundaries follow the `backend/app/<module>/` directory structure. |
 | **Notification** | A message sent to a user via one or more channels (push, SMS, email). Sent through the channel-agnostic `NotificationService.send(user, event, context)`. Stored in `notifications` with channel, template, payload, and delivery status. |
 | **SMS Provider** | An abstraction layer (`SMSProvider` interface) for SMS/OTP delivery. Methods: `send_otp`, `verify_otp`. MSG91 is the V1 implementation (India-focused, DLT-compliant). See ADR DEC-AUTH-001. |
 | **State Machine** | An explicit function `transition(entity, new_status, actor, reason)` that validates whether a status transition is legal (against an allow-list), applies the change inside a DB transaction, writes a history/audit row, and triggers side effects. Used for Orders, Deliveries, and Inventory transactions. |

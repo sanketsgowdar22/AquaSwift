@@ -1,5 +1,5 @@
 """
-AquaSwift — Database Configuration
+WoW — Database Configuration
 
 Async SQLAlchemy engine + session factory. Provides the `get_db()` FastAPI
 dependency for session-per-request with automatic rollback on exception.

@@ -1,4 +1,4 @@
-"""AquaSwift — Catalog Service with Redis caching"""
+"""WoW — Catalog Service with Redis caching"""
 
 from __future__ import annotations
 

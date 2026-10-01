@@ -1,15 +1,15 @@
-# AquaSwift — Product Requirements Document (PRD)
+# WoW — Product Requirements Document (PRD)
 
 **Version:** 1.0
 **Status:** Draft
 **Last Updated:** 2026-08-31
-**Owner:** AquaSwift Product Team
+**Owner:** WoW Product Team
 
 ---
 
 ## 1. Product Vision
 
-AquaSwift is a **production-grade Water Supply, Resource, Inventory, Order, Fleet & Delivery Management Platform** serving the Indian water supply market. It enables customers to order water in any quantity — from a 20-litre jar to a 100,000-litre bulk tanker supply — while operators manage water sources, inventory, pricing, fleet, and delivery from a single integrated system.
+WoW is a **production-grade Water Supply, Resource, Inventory, Order, Fleet & Delivery Management Platform** serving the Indian water supply market. It enables customers to order water in any quantity — from a 20-litre jar to a 100,000-litre bulk tanker supply — while operators manage water sources, inventory, pricing, fleet, and delivery from a single integrated system.
 
 The platform comprises three client applications backed by a single modular-monolith backend:
 - **Customer Mobile App** (Flutter — Android + iOS): Browse, order, pay, track
@@ -27,7 +27,7 @@ India's water supply industry — especially bulk and tanker delivery — operat
 - **Drivers** receive delivery instructions verbally, with no route optimization, delivery proof, or earnings tracking.
 - **Business customers** (construction sites, factories, hotels) need recurring/bulk orders with credit terms and invoicing, which manual processes cannot reliably support.
 
-AquaSwift digitizes the entire workflow end-to-end, providing transparency, reliability, and scalability for all participants.
+WoW digitizes the entire workflow end-to-end, providing transparency, reliability, and scalability for all participants.
 
 ---
 
@@ -55,28 +55,28 @@ AquaSwift digitizes the entire workflow end-to-end, providing transparency, reli
 - **Who:** Residential users, small office/shop owners
 - **Needs:** Reliable drinking/daily-use water delivery, easy ordering, price transparency, delivery tracking
 - **Order profile:** Small to medium orders (20L–2,000L), standard frequency
-- **See:** [USER_PERSONAS.md](file:///d:/Aquaswift/docs/00-product/USER_PERSONAS.md) — Persona P1 (Priya)
+- **See:** [USER_PERSONAS.md](file:///d:/WoW/docs/00-product/USER_PERSONAS.md) — Persona P1 (Priya)
 
 ### 4.2 Business Customer
 - **Who:** Construction site managers, hotel/restaurant procurement, factory managers, housing societies
 - **Needs:** Bulk orders, recurring schedules, site-specific delivery, invoicing, credit terms
 - **Order profile:** Large orders (5,000L–100,000L), recurring/scheduled
-- **See:** [USER_PERSONAS.md](file:///d:/Aquaswift/docs/00-product/USER_PERSONAS.md) — Persona P2 (Rajesh)
+- **See:** [USER_PERSONAS.md](file:///d:/WoW/docs/00-product/USER_PERSONAS.md) — Persona P2 (Rajesh)
 
 ### 4.3 Driver
 - **Who:** Tanker/delivery vehicle operators (employed or contracted)
 - **Needs:** Clear delivery instructions, GPS navigation, delivery proof workflow, earnings visibility
-- **See:** [USER_PERSONAS.md](file:///d:/Aquaswift/docs/00-product/USER_PERSONAS.md) — Persona P3 (Suresh)
+- **See:** [USER_PERSONAS.md](file:///d:/WoW/docs/00-product/USER_PERSONAS.md) — Persona P3 (Suresh)
 
 ### 4.4 Operations Manager
 - **Who:** Day-to-day operational staff managing orders, dispatch, inventory, drivers
 - **Needs:** Dashboard visibility, manual override capabilities, alert management
-- **See:** [USER_PERSONAS.md](file:///d:/Aquaswift/docs/00-product/USER_PERSONAS.md) — Persona P4 (Anita)
+- **See:** [USER_PERSONAS.md](file:///d:/WoW/docs/00-product/USER_PERSONAS.md) — Persona P4 (Anita)
 
 ### 4.5 Super Admin
 - **Who:** Business owner / platform administrator
 - **Needs:** Full system configuration, pricing control, catalog management, reporting, audit visibility
-- **See:** [USER_PERSONAS.md](file:///d:/Aquaswift/docs/00-product/USER_PERSONAS.md) — Persona P5 (Vikram)
+- **See:** [USER_PERSONAS.md](file:///d:/WoW/docs/00-product/USER_PERSONAS.md) — Persona P5 (Vikram)
 
 ---
 

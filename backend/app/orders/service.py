@@ -1,4 +1,4 @@
-"""AquaSwift — Orders Service with state machine, inventory reservation, commercial snapshot"""
+"""WoW — Orders Service with state machine, inventory reservation, commercial snapshot"""
 from __future__ import annotations
 import uuid
 from datetime import datetime, timezone

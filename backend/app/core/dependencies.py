@@ -1,5 +1,5 @@
 """
-AquaSwift — FastAPI Dependencies
+WoW — FastAPI Dependencies
 
 Reusable dependency factories for authorization and common parameters.
 """

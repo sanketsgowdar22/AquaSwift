@@ -1,1 +1,1 @@
-# AquaSwift Core Module — Cross-cutting concerns
+# WoW Core Module — Cross-cutting concerns

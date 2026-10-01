@@ -1,5 +1,5 @@
 """
-AquaSwift — Middleware
+WoW — Middleware
 
 CORS configuration, request ID injection, and structured request logging.
 """

@@ -31,6 +31,19 @@ export function AuthProvider({ children }: { children: ReactNode }) {
       } catch {
         Cookies.remove("user_data");
       }
+    } else {
+      // DEMO MODE: Auto-authenticate for preview when backend is not running
+      const demoUser: User = {
+        id: "demo-001",
+        email: "admin@wow.in",
+        full_name: "Admin User",
+        phone: "+919876543210",
+        roles: ["SUPER_ADMIN"],
+        is_active: true,
+      };
+      Cookies.set("access_token", "demo-token", { expires: 1 });
+      Cookies.set("user_data", JSON.stringify(demoUser), { expires: 1 });
+      setUser(demoUser);
     }
     setIsLoading(false);
   }, []);

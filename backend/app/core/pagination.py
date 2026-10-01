@@ -1,5 +1,5 @@
 """
-AquaSwift — Pagination Utilities
+WoW — Pagination Utilities
 
 Supports both cursor-based (for infinite scroll) and offset-based
 (for admin tables) pagination.
