@@ -1,5 +1,5 @@
 /**
- * WoW — API Client
+ * AquaSwift — API Client
  *
  * Type-safe fetch wrapper for the FastAPI backend.
  * Automatically attaches JWT, handles errors, and refreshes tokens.

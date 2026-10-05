@@ -1,4 +1,4 @@
-"""WoW — Notifications Service"""
+"""AquaSwift — Notifications Service"""
 from __future__ import annotations
 import uuid
 import structlog

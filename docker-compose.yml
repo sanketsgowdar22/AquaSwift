@@ -1,24 +1,24 @@
 services:
   db:
     image: postgres:15-alpine
-    container_name: wow-db
+    container_name: aquaswift-db
     environment:
-      POSTGRES_USER: wow
-      POSTGRES_PASSWORD: wow_dev
-      POSTGRES_DB: wow
+      POSTGRES_USER: aquaswift
+      POSTGRES_PASSWORD: aquaswift_dev
+      POSTGRES_DB: aquaswift
     ports:
       - "5432:5432"
     volumes:
       - postgres_data:/var/lib/postgresql/data
     healthcheck:
-      test: ["CMD-SHELL", "pg_isready -U wow"]
+      test: ["CMD-SHELL", "pg_isready -U aquaswift"]
       interval: 5s
       timeout: 5s
       retries: 5
 
   redis:
     image: redis:7-alpine
-    container_name: wow-redis
+    container_name: aquaswift-redis
     ports:
       - "6379:6379"
     healthcheck:
@@ -32,7 +32,7 @@ services:
       context: ./backend
       dockerfile: Dockerfile
       target: development
-    container_name: wow-backend
+    container_name: aquaswift-backend
     env_file:
       - ./backend/.env
     ports:
@@ -51,7 +51,7 @@ services:
       context: ./backend
       dockerfile: Dockerfile
       target: development
-    container_name: wow-celery-worker
+    container_name: aquaswift-celery-worker
     env_file:
       - ./backend/.env
     volumes:
@@ -68,7 +68,7 @@ services:
       context: ./backend
       dockerfile: Dockerfile
       target: development
-    container_name: wow-celery-beat
+    container_name: aquaswift-celery-beat
     env_file:
       - ./backend/.env
     volumes:

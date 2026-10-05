@@ -1,4 +1,4 @@
-"""WoW — Addresses Models per DATABASE_ARCHITECTURE.md §2.3"""
+"""AquaSwift — Addresses Models per DATABASE_ARCHITECTURE.md §2.3"""
 from __future__ import annotations
 import uuid
 from sqlalchemy import Boolean, Column, DateTime, ForeignKey, Numeric, String, Text, func

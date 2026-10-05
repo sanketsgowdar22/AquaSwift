@@ -1,5 +1,5 @@
 """
-WoW — Security Utilities
+AquaSwift — Security Utilities
 
 JWT creation/verification, password hashing, and the `get_current_user()`
 FastAPI dependency that extracts the authenticated user from the request.

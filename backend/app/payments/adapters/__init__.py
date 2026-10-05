@@ -1,2 +1,2 @@
-"""WoW — Payments Adapters"""
+"""AquaSwift — Payments Adapters"""
 # Payments Adapters

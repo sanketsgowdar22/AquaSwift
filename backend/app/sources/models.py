@@ -1,4 +1,4 @@
-"""WoW — Sources Models"""
+"""AquaSwift — Sources Models"""
 from __future__ import annotations
 import uuid
 from sqlalchemy import BigInteger, Column, DateTime, Numeric, String, func

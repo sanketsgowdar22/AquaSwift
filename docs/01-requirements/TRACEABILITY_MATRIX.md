@@ -1,4 +1,4 @@
-# WoW — Traceability Matrix
+# AquaSwift — Traceability Matrix
 
 **Version:** 2.0
 **Status:** Draft (0D columns filled — Implementation/Test columns pending)

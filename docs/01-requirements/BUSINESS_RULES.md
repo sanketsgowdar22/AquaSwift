@@ -1,4 +1,4 @@
-# WoW — Business Rules (Master, System-Level)
+# AquaSwift — Business Rules (Master, System-Level)
 
 **Version:** 1.0
 **Status:** Draft

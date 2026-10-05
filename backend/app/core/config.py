@@ -1,5 +1,5 @@
 """
-WoW — Application Configuration
+AquaSwift — Application Configuration
 
 Typed settings via Pydantic BaseSettings. All configuration is loaded from
 environment variables (or .env file). Every setting has a sensible default
@@ -22,13 +22,13 @@ class Settings(BaseSettings):
     )
 
     # ---- Application ----
-    APP_NAME: str = "WoW"
+    APP_NAME: str = "AquaSwift"
     APP_VERSION: str = "0.1.0"
     APP_ENV: str = "development"
     DEBUG: bool = True
 
     # ---- Database ----
-    DATABASE_URL: str = "postgresql+asyncpg://WoW:WoW_dev@db:5432/WoW"
+    DATABASE_URL: str = "postgresql+asyncpg://aquaswift:aquaswift_dev@db:5432/aquaswift"
     DATABASE_ECHO: bool = False
 
     # ---- Redis ----
@@ -63,7 +63,7 @@ class Settings(BaseSettings):
 
     # ---- MSG91 (SMS/OTP) ----
     MSG91_AUTH_KEY: str = ""
-    MSG91_SENDER_ID: str = "WOWWTD"
+    MSG91_SENDER_ID: str = "AQUASW"
     MSG91_OTP_TEMPLATE_ID: str = ""
 
     # ---- Firebase (Push) ----
@@ -75,11 +75,11 @@ class Settings(BaseSettings):
 
     # ---- Email (SendGrid) ----
     SENDGRID_API_KEY: str = ""
-    EMAIL_FROM: str = "noreply@WoW.in"
-    EMAIL_FROM_NAME: str = "WoW"
+    EMAIL_FROM: str = "noreply@aquaswift.in"
+    EMAIL_FROM_NAME: str = "AquaSwift"
 
     # ---- AWS S3 ----
-    AWS_S3_BUCKET: str = "WoW-media-dev"
+    AWS_S3_BUCKET: str = "aquaswift-media-dev"
     AWS_S3_REGION: str = "ap-south-1"
     AWS_ACCESS_KEY_ID: str = ""
     AWS_SECRET_ACCESS_KEY: str = ""

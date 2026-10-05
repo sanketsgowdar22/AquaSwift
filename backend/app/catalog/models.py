@@ -1,5 +1,5 @@
 """
-WoW — Catalog Models
+AquaSwift — Catalog Models
 
 Water purposes, quality types, delivery methods, purpose-quality mappings,
 and water variants per DATABASE_ARCHITECTURE.md §2.4.

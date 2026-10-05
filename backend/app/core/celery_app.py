@@ -1,5 +1,5 @@
 """
-WoW — Celery Application
+AquaSwift — Celery Application
 
 Central Celery app for background tasks and periodic jobs.
 """
@@ -11,7 +11,7 @@ from celery import Celery
 from app.core.config import settings
 
 celery_app = Celery(
-    "WoW",
+    "aquaswift",
     broker=settings.CELERY_BROKER_URL,
     backend=settings.CELERY_RESULT_BACKEND,
 )

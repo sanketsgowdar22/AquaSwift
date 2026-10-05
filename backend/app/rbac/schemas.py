@@ -1,5 +1,5 @@
 """
-WoW — RBAC Schemas
+AquaSwift — RBAC Schemas
 """
 
 from __future__ import annotations

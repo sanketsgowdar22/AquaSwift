@@ -1,4 +1,4 @@
-"""WoW — Catalog Schemas"""
+"""AquaSwift — Catalog Schemas"""
 
 from __future__ import annotations
 

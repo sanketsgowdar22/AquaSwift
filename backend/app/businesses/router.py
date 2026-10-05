@@ -1,4 +1,4 @@
-"""WoW — B2B Admin Router (stub CRUD)"""
+"""AquaSwift — B2B Admin Router (stub CRUD)"""
 from __future__ import annotations
 import uuid
 from fastapi import APIRouter, Depends

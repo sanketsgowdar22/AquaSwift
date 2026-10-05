@@ -1,4 +1,4 @@
-# WoW — External Integrations Architecture
+# AquaSwift — External Integrations Architecture
 
 **Version:** 1.0
 **Status:** Draft
@@ -190,10 +190,10 @@ Templates must be registered with Indian telecom operators (DLT) before use:
 
 | Template | Purpose | Example |
 |----------|---------|---------|
-| `OTP_LOGIN` | Authentication OTP | "Your WoW OTP is {otp}. Valid for 5 minutes." |
+| `OTP_LOGIN` | Authentication OTP | "Your AquaSwift OTP is {otp}. Valid for 5 minutes." |
 | `ORDER_CONFIRMED` | Order confirmation | "Your order {order_number} is confirmed. Delivery by {time}." |
 | `DELIVERY_OTP` | Proof of delivery | "Your delivery OTP is {otp}. Share with the driver upon arrival." |
-| `DELIVERY_ARRIVED` | Driver arrived | "Your WoW driver has arrived at your location." |
+| `DELIVERY_ARRIVED` | Driver arrived | "Your AquaSwift driver has arrived at your location." |
 | `REFUND_INITIATED` | Refund notification | "Refund of ₹{amount} initiated for order {order_number}." |
 
 ### 3.4 Error Handling
@@ -254,7 +254,7 @@ class PushProvider(ABC):
 | `order_confirmed` | Order Confirmed | "Your order AQ-001 is confirmed!" | `{ "order_id": "uuid", "screen": "order_detail" }` |
 | `delivery_assigned` | Driver Assigned | "A driver has been assigned to your delivery." | `{ "delivery_id": "uuid" }` |
 | `driver_en_route` | Driver En Route | "Your driver is on the way!" | `{ "delivery_id": "uuid" }` |
-| `driver_arrived` | Driver Arrived | "Your WoW driver has arrived." | `{ "delivery_id": "uuid" }` |
+| `driver_arrived` | Driver Arrived | "Your AquaSwift driver has arrived." | `{ "delivery_id": "uuid" }` |
 | `delivery_completed` | Delivery Complete | "5,000L of RO+UV water delivered!" | `{ "order_id": "uuid" }` |
 | `delivery_otp` | Delivery OTP | "Your delivery OTP is 482910." | `{ "delivery_id": "uuid" }` |
 | `partial_delivery` | Partial Delivery | "3,000L delivered. 2,000L will follow." | `{ "delivery_id": "uuid" }` |
@@ -275,7 +275,7 @@ class PushProvider(ABC):
 
 ```bash
 GOOGLE_APPLICATION_CREDENTIALS=/path/to/firebase-service-account.json
-FCM_PROJECT_ID=WoW-prod
+FCM_PROJECT_ID=aquaswift-prod
 ```
 
 ---
@@ -366,7 +366,7 @@ class EmailProvider(ABC):
 | **SDK** | `sendgrid` Python SDK (or `boto3` for SES) |
 | **Auth** | API Key (env var: `SENDGRID_API_KEY`) |
 | **Templates** | Stored in SendGrid Dynamic Templates |
-| **From Address** | `noreply@WoW.in` |
+| **From Address** | `noreply@aquaswift.in` |
 
 ### 6.3 Email Templates
 
@@ -383,8 +383,8 @@ class EmailProvider(ABC):
 
 ```bash
 SENDGRID_API_KEY=SG.xxxxxxxxxxxxxxxxxx
-EMAIL_FROM=noreply@WoW.in
-EMAIL_FROM_NAME=WoW
+EMAIL_FROM=noreply@aquaswift.in
+EMAIL_FROM_NAME=AquaSwift
 ```
 
 ---
@@ -416,7 +416,7 @@ class StorageProvider(ABC):
 |--------|--------|
 | **SDK** | `boto3` |
 | **Auth** | IAM role (ECS task role) or access keys (local dev) |
-| **Bucket** | `WoW-media-{env}` |
+| **Bucket** | `aquaswift-media-{env}` |
 | **Key Structure** | `{type}/{year}/{month}/{uuid}.{ext}` |
 
 ### 7.3 Storage Categories
@@ -431,7 +431,7 @@ class StorageProvider(ABC):
 ### 7.4 Environment Configuration
 
 ```bash
-AWS_S3_BUCKET=WoW-media-prod
+AWS_S3_BUCKET=aquaswift-media-prod
 AWS_S3_REGION=ap-south-1
 AWS_ACCESS_KEY_ID=xxx                # local dev only; production uses IAM roles
 AWS_SECRET_ACCESS_KEY=xxx            # local dev only

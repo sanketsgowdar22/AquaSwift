@@ -1,4 +1,4 @@
-# WoW — Software Requirements Specification (SRS)
+# AquaSwift — Software Requirements Specification (SRS)
 
 **Version:** 1.0
 **Status:** Draft
@@ -7,7 +7,7 @@
 
 ---
 
-> This document contains every functional requirement for WoW, grouped by module, with each requirement individually phase-tagged. Requirements cover the full system across all phases (V1, Phase 2, Phase 3). V1 scoping is a build-sequencing decision captured in `PRODUCT_SCOPE.md`; it is not a reason to omit a requirement from this spec.
+> This document contains every functional requirement for AquaSwift, grouped by module, with each requirement individually phase-tagged. Requirements cover the full system across all phases (V1, Phase 2, Phase 3). V1 scoping is a build-sequencing decision captured in `PRODUCT_SCOPE.md`; it is not a reason to omit a requirement from this spec.
 
 ---
 

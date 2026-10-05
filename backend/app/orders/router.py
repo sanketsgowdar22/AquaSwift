@@ -1,4 +1,4 @@
-"""WoW — Orders Router"""
+"""AquaSwift — Orders Router"""
 from __future__ import annotations
 import uuid
 from fastapi import APIRouter, Depends, Query

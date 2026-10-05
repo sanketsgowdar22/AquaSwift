@@ -1,5 +1,5 @@
 """
-WoW — Audit Logger
+AquaSwift — Audit Logger
 
 Append-only audit logging utility. Every admin write operation calls this
 to create a tamper-proof trail of changes.

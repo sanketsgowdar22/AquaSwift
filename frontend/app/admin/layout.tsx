@@ -5,35 +5,32 @@ import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import { useAuth } from "@/lib/auth";
 import { cn } from "@/lib/utils";
-import WowLogo from "@/components/wow-logo";
 import {
   LayoutDashboard, ShoppingCart, Users, Truck, Droplets, Package,
   DollarSign, Tag, Warehouse, ClipboardList, BarChart3, Shield,
-  Building2, Settings, LogOut, ChevronLeft, Bell, Search, Menu, Beaker, MapPin, Map
+  Building2, Settings, LogOut, ChevronLeft, Bell, Search, Menu, Beaker, MapPin
 } from "lucide-react";
 
 const NAV_ITEMS = [
   { label: "Dashboard", icon: LayoutDashboard, href: "/admin/dashboard" },
   { label: "Orders", icon: ShoppingCart, href: "/admin/orders" },
   { label: "Customers", icon: Users, href: "/admin/customers" },
-  { label: "Delivery Partners", icon: Truck, href: "/admin/drivers" },
+  { label: "Drivers", icon: Truck, href: "/admin/drivers" },
   { label: "Deliveries", icon: MapPin, href: "/admin/deliveries" },
   { type: "divider" as const, label: "Catalog & Pricing" },
-  { label: "Water Products", icon: Droplets, href: "/admin/catalog" },
+  { label: "Water Catalog", icon: Droplets, href: "/admin/catalog" },
   { label: "Pricing Rules", icon: DollarSign, href: "/admin/pricing" },
   { label: "Coupons", icon: Tag, href: "/admin/coupons" },
   { type: "divider" as const, label: "Operations" },
   { label: "Inventory", icon: Warehouse, href: "/admin/inventory" },
   { label: "Sources", icon: Beaker, href: "/admin/sources" },
   { label: "Vehicles", icon: Package, href: "/admin/vehicles" },
-  { label: "Areas", icon: Map, href: "/admin/areas" },
   { type: "divider" as const, label: "Finance & Reports" },
   { label: "Payments", icon: DollarSign, href: "/admin/payments" },
   { label: "Reports", icon: BarChart3, href: "/admin/reports" },
   { label: "Audit Logs", icon: ClipboardList, href: "/admin/audit" },
-  { type: "divider" as const, label: "More" },
+  { type: "divider" as const, label: "B2B" },
   { label: "Businesses", icon: Building2, href: "/admin/businesses" },
-  { label: "Settings", icon: Settings, href: "/admin/settings" },
 ];
 
 export default function AdminLayout({ children }: { children: React.ReactNode }) {
@@ -78,12 +75,13 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
       >
         {/* Logo */}
         <div className="flex items-center gap-3 px-4 h-16 shrink-0 border-b border-white/5">
-          {collapsed ? (
-            <div className="w-9 h-9 rounded-lg bg-primary-500 flex items-center justify-center shrink-0">
-              <Droplets className="w-5 h-5 text-white" />
-            </div>
-          ) : (
-            <WowLogo variant="icon" size="sm" className="animate-fade-in bg-white rounded-lg px-1.5 py-1" />
+          <div className="w-9 h-9 rounded-lg bg-primary-500 flex items-center justify-center shrink-0">
+            <Droplets className="w-5 h-5 text-white" />
+          </div>
+          {!collapsed && (
+            <span className="text-white font-bold text-lg tracking-tight animate-fade-in">
+              AquaSwift
+            </span>
           )}
           <button
             onClick={() => setCollapsed(!collapsed)}

@@ -1,5 +1,5 @@
 """
-WoW — Users Models
+AquaSwift — Users Models
 
 UserRole join table, CustomerProfile, and DriverProfile per DATABASE_ARCHITECTURE.md §2.1.
 """

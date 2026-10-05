@@ -1,4 +1,4 @@
-# WoW — Database Architecture
+# AquaSwift — Database Architecture
 
 **Version:** 1.0
 **Status:** Draft

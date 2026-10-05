@@ -1,5 +1,5 @@
 """
-WoW — Auth Schemas
+AquaSwift — Auth Schemas
 """
 
 from __future__ import annotations

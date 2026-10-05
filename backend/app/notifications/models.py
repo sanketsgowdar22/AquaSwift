@@ -1,4 +1,4 @@
-"""WoW — Notifications Models"""
+"""AquaSwift — Notifications Models"""
 from __future__ import annotations
 import uuid
 from sqlalchemy import Boolean, Column, DateTime, ForeignKey, String, Text, func

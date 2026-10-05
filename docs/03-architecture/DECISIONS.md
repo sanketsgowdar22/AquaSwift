@@ -1,4 +1,4 @@
-# WoW — Architectural Decision Records
+# AquaSwift — Architectural Decision Records
 
 **Version:** 1.0
 **Status:** Draft
@@ -15,7 +15,7 @@
 **Date:** 2026-09-03
 **Status:** Accepted
 
-**Problem:** WoW has 27 identified modules with complex inter-module dependencies (e.g., order creation touches Catalog, Inventory, Pricing, Payments). Should the backend be structured as microservices or a monolith?
+**Problem:** AquaSwift has 27 identified modules with complex inter-module dependencies (e.g., order creation touches Catalog, Inventory, Pricing, Payments). Should the backend be structured as microservices or a monolith?
 
 **Options Considered:**
 1. **Microservices** — Each module as an independent deployable service with inter-service HTTP/gRPC calls.

@@ -1,5 +1,5 @@
 """
-WoW — Users Service
+AquaSwift — Users Service
 """
 
 from __future__ import annotations

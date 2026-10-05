@@ -1,4 +1,4 @@
-"""WoW — Inventory Models. Append-only ledger + balance cache per DATABASE_ARCHITECTURE.md §2.5"""
+"""AquaSwift — Inventory Models. Append-only ledger + balance cache per DATABASE_ARCHITECTURE.md §2.5"""
 from __future__ import annotations
 import uuid
 from sqlalchemy import BigInteger, Column, DateTime, ForeignKey, String, Text, func

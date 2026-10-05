@@ -1,4 +1,4 @@
-"""WoW — Coupons Schemas"""
+"""AquaSwift — Coupons Schemas"""
 from __future__ import annotations
 import uuid
 from datetime import datetime

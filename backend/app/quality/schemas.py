@@ -1,4 +1,4 @@
-"""WoW — Quality Schemas"""
+"""AquaSwift — Quality Schemas"""
 from __future__ import annotations
 import uuid
 from datetime import date, datetime

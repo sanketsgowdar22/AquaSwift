@@ -1,4 +1,4 @@
-"""WoW — Quality Models per DATABASE_ARCHITECTURE.md §2.5"""
+"""AquaSwift — Quality Models per DATABASE_ARCHITECTURE.md §2.5"""
 
 from __future__ import annotations
 

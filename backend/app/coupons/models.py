@@ -1,4 +1,4 @@
-"""WoW — Coupons Models"""
+"""AquaSwift — Coupons Models"""
 from __future__ import annotations
 import uuid
 from sqlalchemy import Boolean, Column, DateTime, Integer, Numeric, String, func

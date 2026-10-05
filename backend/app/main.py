@@ -1,5 +1,5 @@
 """
-WoW — FastAPI Application Factory
+AquaSwift — FastAPI Application Factory
 
 Creates and configures the FastAPI application with middleware, exception
 handlers, and router registration.

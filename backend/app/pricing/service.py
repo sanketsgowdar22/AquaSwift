@@ -1,4 +1,4 @@
-"""WoW — PricingService — SOLE PRICING AUTHORITY"""
+"""AquaSwift — PricingService — SOLE PRICING AUTHORITY"""
 from __future__ import annotations
 import uuid
 from datetime import datetime, timezone

@@ -1,4 +1,4 @@
-# WoW — Product Vision
+# AquaSwift — Product Vision
 
 **Version:** 1.0
 **Last Updated:** 2026-08-31
@@ -7,7 +7,7 @@
 
 ## Vision Statement
 
-> **WoW makes water supply effortless** — connecting customers who need water, in any quantity and for any purpose, with suppliers who can deliver it reliably, transparently, and at scale.
+> **AquaSwift makes water supply effortless** — connecting customers who need water, in any quantity and for any purpose, with suppliers who can deliver it reliably, transparently, and at scale.
 
 ---
 
@@ -48,13 +48,13 @@ A complete, production-grade platform for a single water supply operator in one 
 Real-time tracking, B2B customer workflows (bulk/recurring orders, invoicing), route optimization, advanced analytics, and multi-city expansion. The platform becomes operationally intelligent — predicting demand, optimizing dispatch, and surfacing business insights.
 
 ### Phase 3: Marketplace & Ecosystem
-Multi-supplier marketplace, subscription models, IoT-enabled automatic reordering, white-label capabilities, and machine learning-powered operations. WoW becomes the infrastructure layer for India's water supply industry.
+Multi-supplier marketplace, subscription models, IoT-enabled automatic reordering, white-label capabilities, and machine learning-powered operations. AquaSwift becomes the infrastructure layer for India's water supply industry.
 
 ---
 
 ## Market Positioning
 
-| Attribute | WoW | Traditional Suppliers | Generic Delivery Apps |
+| Attribute | AquaSwift | Traditional Suppliers | Generic Delivery Apps |
 |-----------|-----------|----------------------|----------------------|
 | Water-specific catalog | ✅ Purpose × Quality × Quantity × Method | ❌ Informal product list | ❌ Generic SKUs |
 | Inventory ledger | ✅ Append-only, auditable | ❌ Mental tracking | ❌ Not applicable |

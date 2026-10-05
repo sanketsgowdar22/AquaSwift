@@ -1,5 +1,5 @@
 """
-WoW — Structured Error Classes
+AquaSwift — Structured Error Classes
 
 All application errors subclass `AppError` and produce a standardized JSON
 error envelope. Clients branch on `code`, never on `message`.

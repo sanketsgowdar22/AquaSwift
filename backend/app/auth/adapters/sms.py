@@ -1,5 +1,5 @@
 """
-WoW — SMS Adapter (Stub)
+AquaSwift — SMS Adapter (Stub)
 
 Stub adapter for MSG91 SMS/OTP service. Logs OTP codes to console
 instead of sending real SMS. Swap for real adapter when MSG91 API

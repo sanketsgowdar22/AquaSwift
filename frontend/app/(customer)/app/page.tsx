@@ -1,108 +1,136 @@
 "use client";
 
+import { useQuery } from "@tanstack/react-query";
+import { adminApi } from "@/lib/api";
 import { useAuth } from "@/lib/auth";
-import { Droplets, ChevronRight, Shield, Zap, Truck, CreditCard } from "lucide-react";
+import { Droplets, ChevronRight, Star, Shield, Zap, MapPin } from "lucide-react";
 import Link from "next/link";
-import WowLogo from "@/components/wow-logo";
 
-const WATER_TYPES = [
-  { label: "Drinking Water", desc: "Pure & Safe", icon: "💧", color: "bg-blue-50 border-blue-200" },
-  { label: "Basic / Utility Water", desc: "For daily needs", icon: "🚿", color: "bg-cyan-50 border-cyan-200" },
+const FEATURES = [
+  { icon: Droplets, label: "Multiple Water Types", desc: "Drinking & Utility Water" },
+  { icon: Zap, label: "Fast Delivery", desc: "Within 45-60 minutes" },
+  { icon: Shield, label: "Quality Assured", desc: "100% safe & tested" },
+  { icon: Star, label: "Ratings & Reviews", desc: "Rate your experience" },
 ];
 
 const SIZES = [
-  { label: "20 Ltr", sub: "Jar", icon: "🫙" },
-  { label: "500 Ltr", sub: "", icon: "🛢️" },
-  { label: "1000 Ltr", sub: "", icon: "🚰" },
-  { label: "Tanker", sub: "", icon: "🚚" },
-];
-
-const FEATURES = [
-  { icon: Shield, label: "100% Purified", desc: "RO + UV treated" },
-  { icon: Zap, label: "Express 30-min", desc: "Instant delivery" },
-  { icon: Truck, label: "Live Tracking", desc: "Real-time updates" },
-  { icon: CreditCard, label: "Easy Payment", desc: "UPI, Cards, COD" },
+  { label: "20L Jar", litres: 20, icon: "🫙" },
+  { label: "500L", litres: 500, icon: "🛢️" },
+  { label: "1000L", litres: 1000, icon: "🚰" },
+  { label: "Tanker", litres: 5000, icon: "🚚" },
 ];
 
 export default function CustomerHomePage() {
   const { user } = useAuth();
+  const { data: purposes } = useQuery({ queryKey: ["purposes"], queryFn: adminApi.purposes });
 
   return (
     <div className="animate-fade-in">
-      {/* Hero Card */}
-      <div className="bg-gradient-to-br from-primary-600 via-primary-700 to-primary-800 mx-4 mt-4 rounded-2xl p-6 relative overflow-hidden">
-        <div className="absolute top-0 right-0 w-32 h-32 rounded-full bg-white/5 -translate-y-1/3 translate-x-1/3" />
-        <div className="absolute bottom-0 left-0 w-24 h-24 rounded-full bg-accent-500/10 translate-y-1/3 -translate-x-1/3" />
+      {/* Hero */}
+      <div className="bg-gradient-to-br from-primary-500 via-primary-600 to-primary-700 px-5 pt-5 pb-8 rounded-b-3xl relative overflow-hidden">
+        <div className="absolute top-0 right-0 w-40 h-40 bg-white/5 rounded-full -translate-y-1/2 translate-x-1/2" />
+        <div className="absolute bottom-0 left-0 w-32 h-32 bg-white/5 rounded-full translate-y-1/2 -translate-x-1/2" />
 
         <div className="relative z-10">
-          <WowLogo variant="icon" size="sm" className="mb-3 bg-white rounded-lg px-1.5 py-1" />
-          <h1 className="text-white text-xl font-bold mb-1">Pure Water</h1>
-          <h2 className="text-accent-400 text-2xl font-bold mb-2">On the Way!</h2>
-          <p className="text-white/70 text-sm mb-4">
-            Drinking water & basic utility water delivered safely to your doorstep.
+          <div className="flex items-center gap-2 mb-4">
+            <MapPin className="w-4 h-4 text-primary-200" />
+            <span className="text-primary-200 text-sm">Deliver to</span>
+            <span className="text-white text-sm font-medium">Current Location ▾</span>
+          </div>
+
+          <h2 className="text-2xl font-bold text-white leading-tight mb-2">
+            Pure Water,<br />
+            <span className="text-accent-400">On the Way!</span>
+          </h2>
+          <p className="text-primary-200 text-sm mb-5">
+            Drinking water & utility water delivered safely to your doorstep.
           </p>
+
           <Link
-            href="/app/product"
-            className="inline-flex items-center gap-2 bg-white text-primary-700 font-semibold text-sm px-5 py-2.5 rounded-xl hover:bg-white/90 transition-colors"
+            href="/app/catalog"
+            className="inline-flex items-center gap-2 px-5 py-3 bg-white rounded-xl text-primary-600 font-semibold text-sm shadow-lg shadow-black/10 hover:shadow-xl transition-all"
           >
             Order Now <ChevronRight className="w-4 h-4" />
           </Link>
         </div>
       </div>
 
-      {/* What do you need? */}
-      <div className="px-4 mt-6">
-        <h3 className="text-base font-semibold text-text-primary mb-3">What do you need?</h3>
+      {/* Welcome */}
+      <div className="px-5 -mt-4">
+        <div className="bg-white rounded-2xl border border-border/60 p-4 shadow-sm">
+          <p className="text-sm text-text-secondary">
+            Welcome back, <span className="font-semibold text-text-primary">{user?.full_name || "Guest"}</span> 👋
+          </p>
+        </div>
+      </div>
+
+      {/* Water Purposes */}
+      <div className="px-5 mt-6">
+        <h3 className="font-semibold text-text-primary mb-3">What do you need?</h3>
         <div className="grid grid-cols-2 gap-3">
-          {WATER_TYPES.map((type) => (
-            <Link
-              key={type.label}
-              href="/app/product"
-              className={`border rounded-xl p-4 flex flex-col items-center text-center hover:shadow-md transition-shadow ${type.color}`}
-            >
-              <span className="text-3xl mb-2">{type.icon}</span>
-              <span className="text-sm font-semibold text-text-primary">{type.label}</span>
-              <span className="text-xs text-text-secondary mt-0.5">{type.desc}</span>
-            </Link>
-          ))}
+          {(purposes || []).length > 0
+            ? purposes!.map((p) => (
+                <Link
+                  key={p.id}
+                  href={`/app/catalog?purpose=${p.id}`}
+                  className="bg-white rounded-2xl border border-border/60 p-4 hover:shadow-lg hover:border-primary-200 transition-all group"
+                >
+                  <div className="w-10 h-10 rounded-xl bg-primary-50 flex items-center justify-center mb-2 group-hover:bg-primary-100 transition-colors">
+                    <Droplets className="w-5 h-5 text-primary-500" />
+                  </div>
+                  <h4 className="font-medium text-text-primary text-sm">{p.name}</h4>
+                  <p className="text-xs text-text-muted mt-0.5 line-clamp-2">{p.description || "Premium quality"}</p>
+                </Link>
+              ))
+            : [
+                { name: "Drinking Water", desc: "RO + UV Purified" },
+                { name: "Utility Water", desc: "For cleaning & daily use" },
+              ].map((p) => (
+                <Link
+                  key={p.name}
+                  href="/app/catalog"
+                  className="bg-white rounded-2xl border border-border/60 p-4 hover:shadow-lg hover:border-primary-200 transition-all group"
+                >
+                  <div className="w-10 h-10 rounded-xl bg-primary-50 flex items-center justify-center mb-2 group-hover:bg-primary-100 transition-colors">
+                    <Droplets className="w-5 h-5 text-primary-500" />
+                  </div>
+                  <h4 className="font-medium text-text-primary text-sm">{p.name}</h4>
+                  <p className="text-xs text-text-muted mt-0.5">{p.desc}</p>
+                </Link>
+              ))}
         </div>
       </div>
 
       {/* Popular Sizes */}
-      <div className="px-4 mt-6">
-        <div className="flex items-center justify-between mb-3">
-          <h3 className="text-base font-semibold text-text-primary">Popular Sizes</h3>
-          <Link href="/app/product" className="text-primary-600 text-xs font-medium flex items-center gap-1">
-            View all <ChevronRight className="w-3 h-3" />
-          </Link>
-        </div>
-        <div className="flex gap-3 overflow-x-auto pb-2 scrollbar-hide">
-          {SIZES.map((size) => (
+      <div className="px-5 mt-6">
+        <h3 className="font-semibold text-text-primary mb-3">Popular Sizes</h3>
+        <div className="flex gap-3 overflow-x-auto pb-2 -mx-5 px-5 scrollbar-hide">
+          {SIZES.map((s) => (
             <Link
-              key={size.label}
-              href="/app/product"
-              className="flex-shrink-0 w-20 bg-white border border-border rounded-xl p-3 flex flex-col items-center text-center hover:border-primary-300 transition-colors"
+              key={s.label}
+              href="/app/catalog"
+              className="shrink-0 bg-white rounded-2xl border border-border/60 p-4 w-24 text-center hover:shadow-lg hover:border-primary-200 transition-all"
             >
-              <span className="text-2xl mb-1.5">{size.icon}</span>
-              <span className="text-xs font-semibold text-text-primary">{size.label}</span>
-              {size.sub && <span className="text-[10px] text-text-muted">{size.sub}</span>}
+              <span className="text-2xl">{s.icon}</span>
+              <p className="text-xs font-semibold text-text-primary mt-2">{s.label}</p>
+              <p className="text-[10px] text-text-muted">{s.litres}L</p>
             </Link>
           ))}
         </div>
       </div>
 
-      {/* Why Choose WoW */}
-      <div className="px-4 mt-6 mb-6">
-        <h3 className="text-base font-semibold text-text-primary mb-3">Why Choose WoW?</h3>
+      {/* Features */}
+      <div className="px-5 mt-6 mb-8">
+        <h3 className="font-semibold text-text-primary mb-3">Key Features</h3>
         <div className="grid grid-cols-2 gap-3">
           {FEATURES.map((f) => (
-            <div key={f.label} className="bg-white border border-border rounded-xl p-3 flex items-start gap-3">
+            <div key={f.label} className="bg-white rounded-2xl border border-border/60 p-3.5 flex items-start gap-3">
               <div className="w-9 h-9 rounded-lg bg-primary-50 flex items-center justify-center shrink-0">
-                <f.icon className="w-4.5 h-4.5 text-primary-600" />
+                <f.icon className="w-4 h-4 text-primary-500" />
               </div>
               <div>
-                <p className="text-sm font-medium text-text-primary">{f.label}</p>
-                <p className="text-xs text-text-muted">{f.desc}</p>
+                <p className="text-xs font-semibold text-text-primary leading-tight">{f.label}</p>
+                <p className="text-[10px] text-text-muted mt-0.5">{f.desc}</p>
               </div>
             </div>
           ))}

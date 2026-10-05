@@ -41,7 +41,7 @@
 **User Story:** US-PAY-001
 **Given** the payment flow uses Razorpay's gateway-hosted checkout,
 **When** the customer enters card details,
-**Then** card data is handled entirely by Razorpay and never reaches the WoW server.
+**Then** card data is handled entirely by Razorpay and never reaches the AquaSwift server.
 
 ---
 

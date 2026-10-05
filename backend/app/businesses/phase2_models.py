@@ -1,4 +1,4 @@
-"""WoW — Phase 2/3 Stub Models (recurring_orders, invoices)"""
+"""AquaSwift — Phase 2/3 Stub Models (recurring_orders, invoices)"""
 from __future__ import annotations
 import uuid
 from sqlalchemy import BigInteger, Column, Date, DateTime, ForeignKey, Integer, Numeric, String, Text, Time, func

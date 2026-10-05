@@ -1,4 +1,4 @@
-# WoW — Functional Requirements
+# AquaSwift — Functional Requirements
 
 **Version:** 1.0
 **Status:** Draft

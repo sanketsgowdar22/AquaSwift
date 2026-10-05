@@ -1,5 +1,5 @@
 """
-WoW — RBAC Models
+AquaSwift — RBAC Models
 
 Roles table storing platform roles with their permission sets.
 Permissions are stored as a JSONB array of strings (e.g., ["catalog:read", "orders:create"]).

@@ -1,4 +1,4 @@
-"""WoW — B2B Models per DATABASE_ARCHITECTURE.md §2.2 + §2.9"""
+"""AquaSwift — B2B Models per DATABASE_ARCHITECTURE.md §2.2 + §2.9"""
 from __future__ import annotations
 import uuid
 from sqlalchemy import BigInteger, Boolean, Column, Date, DateTime, ForeignKey, Integer, Numeric, String, Text, UniqueConstraint, func

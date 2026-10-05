@@ -1,5 +1,5 @@
 """
-WoW — RBAC Service
+AquaSwift — RBAC Service
 
 Core authorization logic: check_user_permission() is called by the
 require_permission() dependency for every protected endpoint.
