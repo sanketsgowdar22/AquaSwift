@@ -1,4 +1,4 @@
-# AquaSwift — Entity-Relationship Diagrams
+# WoW — Entity-Relationship Diagrams
 
 **Version:** 1.0
 **Status:** Draft
