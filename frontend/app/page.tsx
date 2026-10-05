@@ -3,7 +3,7 @@
 import { useEffect } from "react";
 import { useRouter } from "next/navigation";
 import { useAuth } from "@/lib/auth";
-import { Droplets } from "lucide-react";
+import WowLogo from "@/components/wow-logo";
 
 export default function HomePage() {
   const { isAuthenticated, user, isLoading } = useAuth();
@@ -26,12 +26,12 @@ export default function HomePage() {
   }, [isAuthenticated, isLoading, user, router]);
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-primary-500">
+    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-primary-700 via-primary-600 to-primary-800">
       <div className="text-center animate-fade-in">
-        <Droplets className="w-16 h-16 text-white mx-auto mb-4 animate-pulse" />
-        <h1 className="text-3xl font-bold text-white">AquaSwift</h1>
-        <p className="text-primary-200 mt-2">Loading...</p>
+        <WowLogo variant="full" size="xl" dark className="mx-auto mb-4 items-center" />
+        <p className="text-white/60 mt-4">Loading...</p>
       </div>
     </div>
   );
 }
+
