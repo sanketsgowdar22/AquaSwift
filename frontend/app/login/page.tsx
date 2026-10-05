@@ -3,8 +3,9 @@
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { useAuth } from "@/lib/auth";
-import { Droplets, Mail, Lock, Loader2, AlertCircle } from "lucide-react";
+import { Mail, Lock, Loader2, AlertCircle, Droplets, Shield, Zap, Star, MapPin } from "lucide-react";
 import { cn } from "@/lib/utils";
+import WowLogo from "@/components/wow-logo";
 
 export default function LoginPage() {
   const { login, isAuthenticated } = useAuth();
@@ -36,29 +37,38 @@ export default function LoginPage() {
   return (
     <div className="min-h-screen flex">
       {/* Left Panel — Branding */}
-      <div className="hidden lg:flex lg:w-1/2 bg-gradient-to-br from-primary-600 via-primary-500 to-primary-700 relative overflow-hidden">
+      <div className="hidden lg:flex lg:w-1/2 bg-gradient-to-br from-primary-700 via-primary-600 to-primary-800 relative overflow-hidden">
         <div className="absolute inset-0 opacity-10">
           <div className="absolute top-20 left-20 w-64 h-64 rounded-full bg-white/20 blur-3xl" />
           <div className="absolute bottom-20 right-20 w-96 h-96 rounded-full bg-accent-400/20 blur-3xl" />
         </div>
         <div className="relative z-10 flex flex-col justify-center px-16">
-          <div className="flex items-center gap-3 mb-8">
-            <div className="w-14 h-14 rounded-2xl bg-white/15 backdrop-blur-sm flex items-center justify-center">
-              <Droplets className="w-8 h-8 text-white" />
-            </div>
-            <div>
-              <h1 className="text-3xl font-bold text-white tracking-tight">AquaSwift</h1>
-              <p className="text-primary-200 text-sm">Water Delivery Platform</p>
-            </div>
-          </div>
+          <WowLogo variant="full" size="lg" dark className="mb-10" />
 
           <h2 className="text-4xl font-bold text-white leading-tight mb-4">
             Pure Water,<br />
-            <span className="text-accent-400">Swift Delivery.</span>
+            <span className="text-accent-400">On the Way!</span>
           </h2>
           <p className="text-primary-200 text-lg leading-relaxed max-w-md">
             Manage orders, inventory, fleet, and deliveries — all from a single integrated platform.
           </p>
+
+          <div className="mt-10 space-y-3 max-w-sm">
+            {[
+              { icon: Droplets, label: "Drinking & Utility Water" },
+              { icon: Zap, label: "Fast Delivery in 45-60 mins" },
+              { icon: MapPin, label: "Live Order Tracking" },
+              { icon: Shield, label: "100% Safe & Quality Assured" },
+              { icon: Star, label: "Trusted by 2K+ Customers" },
+            ].map((item) => (
+              <div key={item.label} className="flex items-center gap-3">
+                <div className="w-8 h-8 rounded-lg bg-white/10 flex items-center justify-center">
+                  <item.icon className="w-4 h-4 text-accent-400" />
+                </div>
+                <span className="text-white/80 text-sm">{item.label}</span>
+              </div>
+            ))}
+          </div>
 
           <div className="mt-12 grid grid-cols-2 gap-4 max-w-sm">
             {[
@@ -79,11 +89,8 @@ export default function LoginPage() {
       {/* Right Panel — Login Form */}
       <div className="w-full lg:w-1/2 flex items-center justify-center p-8">
         <div className="w-full max-w-md animate-fade-in">
-          <div className="lg:hidden flex items-center gap-3 mb-8">
-            <div className="w-12 h-12 rounded-xl bg-primary-500 flex items-center justify-center">
-              <Droplets className="w-7 h-7 text-white" />
-            </div>
-            <h1 className="text-2xl font-bold text-primary-700">AquaSwift</h1>
+          <div className="lg:hidden mb-8">
+            <WowLogo variant="full" size="lg" />
           </div>
 
           <h2 className="text-2xl font-bold text-text-primary mb-1">Welcome back</h2>
@@ -107,7 +114,7 @@ export default function LoginPage() {
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   className="w-full pl-11 pr-4 py-3 rounded-xl border border-border bg-white text-text-primary placeholder:text-text-muted focus:outline-none focus:ring-2 focus:ring-primary-500/30 focus:border-primary-500 transition-all"
-                  placeholder="admin@aquaswift.in"
+                  placeholder="admin@wow.in"
                   required
                 />
               </div>
@@ -134,10 +141,10 @@ export default function LoginPage() {
               disabled={loading}
               className={cn(
                 "w-full py-3.5 rounded-xl font-semibold text-white transition-all duration-200",
-                "bg-primary-500 hover:bg-primary-600 active:bg-primary-700",
+                "bg-primary-600 hover:bg-primary-700 active:bg-primary-800",
                 "focus:outline-none focus:ring-2 focus:ring-primary-500/50 focus:ring-offset-2",
                 "disabled:opacity-60 disabled:cursor-not-allowed",
-                "shadow-lg shadow-primary-500/25 hover:shadow-xl hover:shadow-primary-500/30"
+                "shadow-lg shadow-primary-600/25 hover:shadow-xl hover:shadow-primary-600/30"
               )}
             >
               {loading ? (
@@ -149,7 +156,7 @@ export default function LoginPage() {
           </form>
 
           <p className="text-center text-text-muted text-sm mt-8">
-            Admin: admin@aquaswift.in / admin123
+            Admin: admin@wow.in / admin123
           </p>
         </div>
       </div>

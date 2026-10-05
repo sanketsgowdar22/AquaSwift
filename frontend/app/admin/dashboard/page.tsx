@@ -21,10 +21,10 @@ const SALES_CHART_DATA = [
 ];
 
 const TOP_PRODUCTS_DATA = [
-  { name: "20L Jar", percentage: 40, color: "#1E56A0" },
-  { name: "500L Can", percentage: 25, color: "#4A8FE7" },
-  { name: "1000L", percentage: 20, color: "#7AA4F5" },
-  { name: "Tanker", percentage: 15, color: "#ADC8FF" },
+  { name: "20L Jar", percentage: 60, color: "#0160CD" },
+  { name: "500L", percentage: 20, color: "#3A73E8" },
+  { name: "1000L", percentage: 10, color: "#5D8FF5" },
+  { name: "Tanker", percentage: 10, color: "#91B5F9" },
 ];
 
 interface StatCardProps {
