@@ -1,4 +1,4 @@
-"""AquaSwift — Reviews Service"""
+"""WoW — Reviews Service"""
 from __future__ import annotations
 import uuid
 from sqlalchemy import select

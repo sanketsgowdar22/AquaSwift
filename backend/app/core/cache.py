@@ -1,5 +1,5 @@
 """
-AquaSwift — Redis Cache Utilities
+WoW — Redis Cache Utilities
 
 Provides a Redis connection factory and helper functions for caching with
 TTL support and write-through invalidation.

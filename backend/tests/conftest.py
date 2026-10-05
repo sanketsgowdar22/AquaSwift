@@ -1,5 +1,5 @@
 """
-AquaSwift — Test Configuration
+WoW — Test Configuration
 
 Shared fixtures for integration and E2E tests.
 """
@@ -19,7 +19,7 @@ from app.core.database import Base, get_db
 from app.main import app
 
 # Use a separate test database
-TEST_DATABASE_URL = settings.DATABASE_URL.replace("/aquaswift", "/aquaswift_test")
+TEST_DATABASE_URL = settings.DATABASE_URL.replace("/WoW", "/WoW_test")
 
 
 @pytest.fixture(scope="session")

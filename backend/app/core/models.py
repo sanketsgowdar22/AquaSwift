@@ -1,5 +1,5 @@
 """
-AquaSwift — Base Model Mixins
+WoW — Base Model Mixins
 
 Reusable mixins that provide common columns across all domain models.
 Every table uses UUID primary keys, TIMESTAMPTZ timestamps, and optional
