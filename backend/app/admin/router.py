@@ -1,4 +1,4 @@
-"""AquaSwift — Admin Dashboard + Reports + Audit Log Router"""
+"""WoW — Admin Dashboard + Reports + Audit Log Router"""
 from __future__ import annotations
 import uuid
 from datetime import datetime, timedelta, timezone

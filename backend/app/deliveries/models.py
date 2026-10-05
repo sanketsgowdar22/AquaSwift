@@ -1,4 +1,4 @@
-"""AquaSwift — Deliveries Models per DATABASE_ARCHITECTURE.md §2.7"""
+"""WoW — Deliveries Models per DATABASE_ARCHITECTURE.md §2.7"""
 from __future__ import annotations
 import uuid
 from sqlalchemy import BigInteger, Column, DateTime, ForeignKey, Integer, Numeric, String, Text, func

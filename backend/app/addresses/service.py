@@ -1,4 +1,4 @@
-"""AquaSwift — Addresses Service"""
+"""WoW — Addresses Service"""
 from __future__ import annotations
 import uuid
 from sqlalchemy import select, update

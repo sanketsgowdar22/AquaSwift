@@ -1,4 +1,4 @@
-"""AquaSwift — Deliveries Service with state machine and OTP verification"""
+"""WoW — Deliveries Service with state machine and OTP verification"""
 from __future__ import annotations
 import random
 import string

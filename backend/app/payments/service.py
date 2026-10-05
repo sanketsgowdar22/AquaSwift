@@ -1,4 +1,4 @@
-"""AquaSwift — Payments Service"""
+"""WoW — Payments Service"""
 from __future__ import annotations
 import uuid
 from datetime import datetime, timezone

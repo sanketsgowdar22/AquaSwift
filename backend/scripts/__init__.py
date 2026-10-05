@@ -1,1 +1,1 @@
-# AquaSwift Scripts
+# WoW Scripts

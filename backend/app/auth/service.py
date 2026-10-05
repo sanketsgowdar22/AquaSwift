@@ -1,5 +1,5 @@
 """
-AquaSwift — Auth Service
+WoW — Auth Service
 
 Core authentication logic: OTP flow, email+password login, JWT issuance,
 refresh token rotation, logout.

@@ -1,4 +1,4 @@
-"""AquaSwift — Inventory Service. SELECT ... FOR UPDATE on balances for concurrency safety."""
+"""WoW — Inventory Service. SELECT ... FOR UPDATE on balances for concurrency safety."""
 from __future__ import annotations
 import uuid
 import structlog
