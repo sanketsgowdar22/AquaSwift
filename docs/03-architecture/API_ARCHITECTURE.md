@@ -1,4 +1,4 @@
-# AquaSwift — API Architecture
+# WoW — API Architecture
 
 **Version:** 1.0
 **Status:** Draft
@@ -11,7 +11,7 @@
 ### 1.1 Base URL
 
 ```
-Production: https://api.aquaswift.in/api/v1
+Production: https://api.WoW.in/api/v1
 Local Dev:  http://localhost:8000/api/v1
 ```
 

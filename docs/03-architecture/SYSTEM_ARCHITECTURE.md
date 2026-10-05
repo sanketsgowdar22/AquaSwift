@@ -1,4 +1,4 @@
-# AquaSwift — System Architecture
+# WoW — System Architecture
 
 **Version:** 1.0
 **Status:** Draft
@@ -8,7 +8,7 @@
 
 ## 1. Architecture Overview
 
-AquaSwift is a **modular monolith** (DEC-ARCH-001) — a single deployable backend serving three client applications through a unified REST API.
+WoW is a **modular monolith** (DEC-ARCH-001) — a single deployable backend serving three client applications through a unified REST API.
 
 ```
 ┌─────────────────┐  ┌──────────────────┐  ┌───────────────────┐
@@ -84,7 +84,7 @@ See DEC-ARCH-002 for stack rationale.
 ## 3. Repository Structure
 
 ```
-aquaswift/
+WoW/
 ├── backend/
 │   ├── app/
 │   │   ├── auth/              # Authentication & Identity
@@ -422,8 +422,8 @@ services:
   postgres:
     image: postgres:15
     environment:
-      POSTGRES_DB: aquaswift
-      POSTGRES_USER: aquaswift
+      POSTGRES_DB: WoW
+      POSTGRES_USER: WoW
       POSTGRES_PASSWORD: dev_password
     ports: ["5432:5432"]
     volumes: [pgdata:/var/lib/postgresql/data]
@@ -438,7 +438,7 @@ services:
     ports: ["8000:8000"]
     depends_on: [postgres, redis]
     environment:
-      - DATABASE_URL=postgresql+asyncpg://aquaswift:dev_password@postgres/aquaswift
+      - DATABASE_URL=postgresql+asyncpg://WoW:dev_password@postgres/WoW
       - REDIS_URL=redis://redis:6379/0
     volumes: ["./backend:/app"]
 

@@ -1,4 +1,4 @@
-# AquaSwift — State Machines
+# WoW — State Machines
 
 **Version:** 1.0
 **Status:** Draft
